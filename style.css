@@ -1,0 +1,434 @@
+/* ============================================
+   CSS2综合网页 - 外部样式表 (style.css)
+   ============================================ */
+
+/* ------------------------------------------
+   【要求6-继承】
+   body设置font-family和color，所有子元素自动继承这些属性
+   体现CSS继承特性：子元素未设置时，自动继承父元素值
+   ------------------------------------------ */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Microsoft YaHei", Arial, sans-serif;
+    color: #333333;
+    line-height: 1.6;
+    background-color: #f0f2f5;
+}
+
+/* ------------------------------------------
+   【要求3-①】标签（元素）选择器
+   直接使用标签名作为选择器
+   ------------------------------------------ */
+
+/* 标签选择器 - h1 */
+/* 【要求6-层叠】下面的 color:#333 和 color:#444 同时作用于h1，
+   后者覆盖前者，体现CSS层叠特性（后书写的规则生效） */
+/* 【要求6-优先级】此处同时有标签选择器body和标签选择器h1设置color，
+   h1更具体优先级更高，体现CSS优先级特性 */
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333333;
+    color: #444444;
+    text-align: center;
+    line-height: 1.3;
+    margin: 0 0 15px 0;
+}
+
+/* 标签选择器 - h2 */
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c3e50;
+    text-align: left;
+    line-height: 1.4;
+    margin: 0 0 12px 0;
+}
+
+/* 标签选择器 - p */
+p {
+    font-size: 15px;
+    color: #555555;
+    line-height: 1.8;
+    margin: 0 0 15px 0;
+}
+
+/* 标签选择器 - a（配合要求4伪类使用） */
+a {
+    color: #3498db;
+}
+
+/* 标签选择器 - ul */
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* 标签选择器 - form */
+form {
+    margin: 0;
+    padding: 0;
+}
+
+/* 标签选择器 - button */
+button {
+    font-size: 16px;
+    font-family: "Microsoft YaHei", Arial, sans-serif;
+    cursor: pointer;
+}
+
+/* 标签选择器 - input */
+input {
+    font-size: 14px;
+    font-family: "Microsoft YaHei", Arial, sans-serif;
+}
+
+/* 标签选择器 - textarea */
+textarea {
+    font-size: 14px;
+    font-family: "Microsoft YaHei", Arial, sans-serif;
+}
+
+/* 标签选择器 - label */
+label {
+    font-size: 14px;
+}
+
+/* ------------------------------------------
+   【要求3-②】class类选择器
+   以.开头，可复用于多个元素
+   ------------------------------------------ */
+
+/* 类选择器 - 导航栏 */
+.nav {
+    background-color: #2c3e50;
+    padding: 0;
+}
+
+.nav-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 15px 20px;
+}
+
+/* 类选择器 - logo */
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    line-height: 30px;
+}
+
+/* 类选择器 - 主容器 */
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+/* 类选择器 - 英雄区域 */
+.hero {
+    background-color: #5dade2;
+    color: #ffffff;
+    padding: 60px 40px;
+    text-align: center;
+    margin: 0 0 30px 0;
+    border: 2px solid #3498db;
+}
+
+/* 【要求10-relative】相对定位：hero作为定位容器 */
+/* 【要求8】盒模型四层：content(padding决定) + padding + border + margin */
+.hero {
+    position: relative;
+}
+
+/* 类选择器 - 卡片 */
+.card {
+    background-color: #ffffff;
+    padding: 25px;
+    margin: 0 2% 20px 0;
+    border: 1px solid #dcdfe6;
+    float: left;
+    width: 46%;
+}
+
+/* 类选择器 - 高亮（用于演示选择器权重） */
+.highlight {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+/* 类选择器 - 联系表单 */
+.contact-form {
+    background-color: #ffffff;
+    padding: 30px;
+    border: 1px solid #dcdfe6;
+    margin: 20px 0 0 0;
+}
+
+/* 类选择器 - 表单组 */
+.form-group {
+    margin: 0 0 18px 0;
+}
+
+/* 类选择器 - 单选按钮组容器 */
+.radio-group {
+    margin: 10px 0 0 0;
+}
+
+/* 类选择器 - 单个单选按钮标签（卡片样式） */
+.radio-item {
+    display: inline-block;
+    padding: 8px 22px;
+    margin: 0 12px 0 0;
+    border: 2px solid #dcdfe6;
+    cursor: pointer;
+    font-weight: normal;
+    color: #555555;
+    font-size: 14px;
+}
+
+.radio-item span {
+    vertical-align: middle;
+}
+
+/* 选中状态样式（相邻兄弟选择器，CSS2） */
+.radio-item input:checked + span {
+    color: #3498db;
+    font-weight: bold;
+}
+
+/* 类选择器 - 页脚 */
+.footer {
+    background-color: #2c3e50;
+    color: #aaaaaa;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+}
+
+/* ------------------------------------------
+   【要求3-③】id选择器
+   以#开头，页面内唯一，权重高于类选择器
+   ------------------------------------------ */
+
+/* id选择器 - 主标题，权重(1,0,0) */
+/* 【要求5】选择器权重对比：
+   第1组：.highlight 权重(0,1,0) vs #main-title 权重(1,0,0)
+   → id选择器(1,0,0) > 类选择器(0,1,0)，#main-title的color生效 */
+#main-title {
+    color: #1a1a2e;
+}
+
+/* id选择器 - 关于区域 */
+#about {
+    background-color: #ffffff;
+    padding: 30px;
+    margin: 0 0 30px 0;
+    border: 1px solid #dcdfe6;
+}
+
+/* id选择器 - 联系区域 */
+#contact {
+    background-color: #ffffff;
+    padding: 30px;
+    border: 1px solid #dcdfe6;
+}
+
+/* ------------------------------------------
+   【要求3-④】后代选择器
+   用空格分隔，选择某元素内部的所有后代
+   ------------------------------------------ */
+
+/* 后代选择器 - 导航内的a标签 */
+/* 【要求5】第2组权重对比（补充）：
+   .nav a 权重(0,1,1) vs 标签选择器 a 权重(0,0,1)
+   → 后代选择器(0,1,1) > 标签选择器(0,0,1)，导航链接使用下方样式 */
+.nav a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+/* 后代选择器 - 英雄区域内的h1 */
+.hero h1 {
+    color: #ffffff;
+}
+
+/* 后代选择器 - 英雄区域内的p */
+.hero p {
+    color: #e8f4fd;
+    font-size: 18px;
+}
+
+/* 后代选择器 - 卡片内的h2 */
+.card h2 {
+    color: #3498db;
+    font-size: 22px;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 8px;
+}
+
+/* 后代选择器 - 卡片内的p */
+.card p {
+    color: #666666;
+}
+
+/* 后代选择器 - 表单内的label */
+.contact-form label {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* 后代选择器 - 表单内的input */
+.contact-form input {
+    padding: 8px 12px;
+    border: 1px solid #cccccc;
+    width: 250px;
+}
+
+/* 单选按钮不受input通用样式影响 */
+.radio-item input {
+    width: auto;
+    padding: 0;
+    border: none;
+    margin: 0 6px 0 0;
+    vertical-align: middle;
+}
+
+/* 后代选择器 - 表单内的textarea */
+.contact-form textarea {
+    padding: 10px 12px;
+    border: 1px solid #cccccc;
+    width: 100%;
+}
+
+/* ------------------------------------------
+   【要求4】链接伪类 - 严格按LVHA顺序书写
+   a:link → a:visited → a:hover → a:active
+   ------------------------------------------ */
+
+/* L - link：未访问的链接 */
+a:link {
+    text-decoration: none;
+}
+
+/* V - visited：已访问的链接 */
+a:visited {
+    color: #8e44ad;
+}
+
+/* H - hover：鼠标悬停时的链接 */
+a:hover {
+    color: #e74c3c;
+    text-decoration: underline;
+}
+
+/* A - active：鼠标按下时的链接 */
+a:active {
+    color: #c0392b;
+}
+
+/* ------------------------------------------
+   【要求7】文字与背景属性（已在上方各选择器中使用）
+   color         - 文字颜色（如body的color:#333）
+   font-size     - 字号（如h1的font-size:36px）
+   font-family   - 字体（如body的font-family）
+   font-weight   - 加粗（如h1的font-weight:bold）
+   text-align    - 对齐（如h1的text-align:center）
+   line-height   - 行高（如body的line-height:1.6）
+   background-color - 背景色（如body的background-color:#f0f2f5）
+   ------------------------------------------ */
+
+/* ------------------------------------------
+   【要求8】盒模型详解
+   content  - 内容区域（由width/height或内容撑开）
+   padding  - 内边距（内容与边框之间）
+   border   - 边框
+   margin   - 外边距（元素与其他元素之间）
+
+   margin塌陷：父子块级元素垂直方向margin会塌陷，取较大值
+   margin合并：相邻兄弟元素的垂直margin会合并，取较大值
+   （如#about的margin-bottom:30px与.contact的margin:0之间，
+    实际间距为30px而非叠加值）
+   ------------------------------------------ */
+
+/* ------------------------------------------
+   【要求9】浮动布局 + clearfix清除浮动
+   float:left 使两个.card横向并排
+   clearfix解决父容器高度塌陷问题
+   ------------------------------------------ */
+.clearfix {
+    zoom: 1;
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+
+/* ------------------------------------------
+   【要求10】定位
+   relative - 相对定位（元素相对自身原位置偏移）
+   absolute - 绝对定位（元素相对最近定位祖先元素偏移）
+   ------------------------------------------ */
+
+/* 装饰徽章 - 绝对定位，相对于.hero（relative定位容器） */
+.badge {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background-color: #e74c3c;
+    color: #ffffff;
+    padding: 6px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 2px solid #ffffff;
+}
+
+/* ------------------------------------------
+   【要求11】文本与列表样式补充
+   ------------------------------------------ */
+
+/* 清除ul默认圆点和左侧内边距 */
+.nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 导航列表项横向排列 */
+.nav li {
+    display: inline;
+    margin-left: 25px;
+}
+
+/* ------------------------------------------
+   其他样式补充
+   ------------------------------------------ */
+
+/* 输入框获取焦点时的边框颜色 */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #3498db;
+}
+
+/* 提交按钮样式 */
+.contact-form button {
+    background-color: #3498db;
+    color: #ffffff;
+    padding: 12px 40px;
+    border: 2px solid #2980b9;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* 按钮悬停效果 */
+.contact-form button:hover {
+    background-color: #2980b9;
+}
