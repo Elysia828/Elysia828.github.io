@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS2综合网页 - 个人作品集</title>
+    <!-- 【要求2】CSS引入方式：使用link标签引入外部style.css文件，禁止内嵌style -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 导航栏 - 包含超链接和列表 -->
+    <div class="nav">
+        <div class="nav-inner">
+            <span class="logo">我的作品集</span>
+            <!-- 【要求12】超链接：页面放置2个a超链接 -->
+            <!-- 【要求11】ul无序列表，设置list-style:none清除圆点和左侧内边距 -->
+            <ul>
+                <li><a href="#about">关于我们</a></li>
+                <li><a href="#contact">联系我们</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 主内容区域 -->
+    <div class="container">
+
+        <!-- 英雄区域 - 展示定位与文字样式 -->
+        <div class="hero">
+            <!-- 【要求11】1个h1 -->
+            <!-- 【要求5②】id选择器 #main-title 权重(1,0,0) > .highlight权重(0,1,0)，id选择器优先级更高 -->
+            <h1 id="main-title" class="highlight">欢迎来到我的页面</h1>
+            <!-- 【要求11】至少3段p段落（第1段） -->
+            <p>这是一个使用CSS2全部基础知识点制作的综合网页作品</p>
+            <!-- 绝对定位装饰元素（相对于.hero相对定位容器） -->
+            <div class="badge">CSS2</div>
+        </div>
+
+        <!-- 关于区域 - 展示浮动布局 -->
+        <div class="about" id="about">
+            <!-- 【要求11】2个h2（第1个） -->
+            <h2>关于我们</h2>
+            <!-- 【要求11】至少3段p段落（第2段） -->
+            <p>我们是一支热爱前端开发的团队，专注于使用HTML和CSS打造精美的网页界面。以下是我们的核心技能：</p>
+
+            <!-- 【要求9】浮动布局：父div容器 + 2个卡片div + float:left并排 + clearfix清除浮动 -->
+            <div class="cards clearfix">
+                <div class="card">
+                    <h2>HTML5</h2> <!-- 【要求11】2个h2（第2个） -->
+                    <p>语义化标签、表单控件、多媒体元素，构建结构清晰的网页骨架。</p>
+                </div>
+                <div class="card">
+                    <h2 class="highlight">CSS2核心</h2>
+                    <p>选择器、盒模型、浮动定位，打造精美的视觉呈现效果。</p>
+                </div>
+            </div>
+        </div>
+
+        <!--
+            【要求8 补充】margin塌陷与margin合并演示
+            上面p的margin-bottom: 20px 与 下面.div-demo的margin-top: 30px 相邻，
+            两者发生margin合并，实际间距取较大值30px，而非叠加的50px。
+        -->
+
+        <!-- 联系区域 - 展示表单 -->
+        <div class="contact" id="contact">
+            <h2>联系我们</h2>
+            <!-- 【要求11】至少3段p段落（第3段） -->
+            <p>如果您有任何问题或合作意向，欢迎通过以下表单与我们取得联系。</p>
+
+            <!-- 【要求1】HTML表单：完整form + input + label + textarea + button -->
+            <!-- radio的name属性相同实现单选互斥；button不写type，默认type="submit" -->
+            <form action="#" class="contact-form">
+                <div class="form-group">
+                    <label for="username">姓名：</label>
+                    <input type="text" id="username" placeholder="请输入您的姓名">
+                </div>
+                <div class="form-group">
+                    <label for="email">邮箱：</label>
+                    <input type="email" id="email" placeholder="请输入您的邮箱">
+                </div>
+                <div class="form-group">
+                    <label>联系方式：</label>
+                    <div class="radio-group">
+                        <label class="radio-item">
+                            <input type="radio" id="phone" name="contact-type" value="phone">
+                            <span>电话</span>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" id="wechat" name="contact-type" value="wechat">
+                            <span>微信</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message">留言：</label>
+                    <textarea id="message" rows="5" placeholder="请输入您的留言内容"></textarea>
+                </div>
+                <!-- button不写type，使用默认type="submit" -->
+                <button>提交信息</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <div class="footer">
+        <p>Copyright 2025 CSS2综合网页作业</p>
+    </div>
+
+</body>
+</html>
